@@ -1,0 +1,29 @@
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+app.use(express.json());
+
+
+// Es nuestra base de datos 
+const libros= [
+  { "id": 1, "titulo": "Cien años de soledad", "autor": "Gabriel García Márquez", "genero": "Realismo mágico", "anioPublicacion": 1967 },
+  { "id": 2, "titulo": "1984", "autor": "George Orwell", "genero": "Distopía", "anioPublicacion": 1949 },
+  { "id": 3, "titulo": "Don Quijote de la Mancha", "autor": "Miguel de Cervantes", "genero": "Novela", "anioPublicacion": 1605 },
+  { "id": 4, "titulo": "El principito", "autor": "Antoine de Saint-Exupéry", "genero": "Fábula", "anioPublicacion": 1943 },
+  { "id": 5, "titulo": "Crónica de una muerte anunciada", "autor": "Gabriel García Márquez", "genero": "Novela", "anioPublicacion":1981 },
+  { "id": 6, "titulo": "Fahrenheit 451", "autor": "Ray Bradbury", "genero": "Ciencia ficción", "anioPublicacion": 1953 },
+  { "id": 7, "titulo": "El código Da Vinci", "autor": "Dan Brown", "genero": "Suspenso", "anioPublicacion": 2003 },
+  { "id": 8, "titulo": "La sombra del viento", "autor": "Carlos Ruiz Zafón", "genero": "Misterio", "anioPublicacion": 2001 },
+  { "id": 9, "titulo": "Harry Potter y la piedra filosofal", "autor": "J. K. Rowling", "genero": "Fantasía", "anioPublicacion": 1997 },
+  { "id": 10, "titulo": "Los juegos del hambre", "autor": "Suzanne Collins", "genero": "Ciencia ficción", "anioPublicacion": 2008 },
+  { "id": 11, "titulo": "La comunidad del anillo","autor": "JRR Tolkien","genero": "Fantasia", "anioPublicacion": 1954 }
+];
+
+//Aqui deben de ir los apis
+
+
+app.listen(PORT,()=>{
+  console.log(`El servidor esta escuchando en http://localhost:${PORT}`);
+
+});
