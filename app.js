@@ -22,6 +22,20 @@ const libros= [
 
 //Aqui deben de ir los apis
 
+app.get('/api/books',(req,res)=>{
+  res.json({status:200,message:'Success',data:libros});
+});
+
+app.get('/api/books/:id',(req,res)=>{
+  const titulo = req.params;
+  const id = parseInt(req.params.id);
+
+  const libro = libros.find(lib => lib.id === id);
+  res.json({status:200,message:'Success',data:libro});
+
+
+});
+
 
 app.listen(PORT,()=>{
   console.log(`El servidor esta escuchando en http://localhost:${PORT}`);
