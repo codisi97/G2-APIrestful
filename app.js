@@ -35,6 +35,21 @@ app.get('/api/books/:id',(req,res)=>{
 
 });
 
+app.post("/api/libros", (req, res) => {
+  const libroNuevo = req.body;
+
+  if (!libroNuevo.titulo || !libroNuevo.autor || !libroNuevo.genero || !libroNuevo.fechaPublicacion) {
+    return res.status(400).json({ messsage: 'Se requieren más datos', data: libros});
+  }
+
+  const nuevoId = libros.length > 0 ? libros[libros.length - 1].id + 1 : 1;
+  libroNuevo.id = nuevoId;
+
+  libros.push(libroNuevo);
+
+  res.status(201).json(libroNuevo);
+});
+
 app.put('/api/books/:id', (req, res) => {
   const libroActualizado = req.body;       
   const id = parseInt(req.params.id);      
